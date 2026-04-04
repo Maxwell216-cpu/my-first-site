@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html>
-<body>
+<body style="background-color: #111; color: #00ff00; font-family: monospace; transition: 0.5s;">
 
-  <h1 id="status-text" style="color: red;">System Status: BROKEN</h1>
-  <p>Minecraft Glitch detected...</p>
+  <h1 id="status-text">SYSTEM: STANDBY</h1>
+  <p id="details">Waiting for user input...</p>
 
-  <button onclick="fixSystem()" style="padding: 10px; cursor: pointer;">
-    Run Repair Script
+  <button onclick="bootSequence()" style="background: #222; color: #00ff00; border: 1px solid #00ff00; padding: 10px; cursor: pointer;">
+    INITIALIZE BOOT
   </button>
 
   <script>
-    function fixSystem() {
-      // 1. Find the broken text
-      const status = document.getElementById('status-text');
+    function bootSequence() {
+      // 1. Using Variables to store our elements
+      const title = document.getElementById('status-text');
+      const info = document.getElementById('details');
       
-      // 2. Change the text and color
-      status.innerText = "System Status: FIXED";
-      status.style.color = "green";
+      // 2. Changing multiple things at once
+      title.innerText = "SYSTEM: LOADING...";
+      title.style.color = "yellow";
       
-      // 3. Pop up a message
-      alert("Repair complete. You can now punch blocks!");
+      // 3. Using a Timer (Advanced)
+      setTimeout(function() {
+        title.innerText = "SYSTEM: ONLINE";
+        title.style.color = "#00ff00";
+        info.innerText = "Hack successful. Welcome, Maxwell.";
+        document.body.style.boxShadow = "inset 0 0 100px #00ff00";
+      }, 2000); // 2000ms = 2 seconds
     }
   </script>
 
