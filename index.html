@@ -1,3 +1,11 @@
-<h1>Maxwell's Tech Business</h1>
-<p>We fix what's broken and build what's next.</p>
-<button>Click for a Quote</button>
+<h1>Maxwell's Tech Lab</h1>
+<p>Testing out the JavaScript brain...</p>
+
+<button onclick="changeColor()">Click for Magic</button>
+
+<script>
+  function changeColor() {
+    // This is the logic: it picks a random color and changes the background
+    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    document.body.style.backgroundColor = "#" + randomColor;
+  }
