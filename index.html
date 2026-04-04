@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html>
-<body style="background-color: #111; color: #00ff00; font-family: monospace; transition: 0.5s;">
+<body style="background-color: #111; color: #ff0000; font-family: 'Courier New', monospace; transition: 0.1s;">
 
-  <h1 id="status-text">SYSTEM: STANDBY</h1>
-  <p id="details">Waiting for user input...</p>
+  <h1 id="status-text">SYSTEM: STABLE</h1>
+  <p id="details">Redstone signal: LOW</p>
 
-  <button onclick="bootSequence()" style="background: #222; color: #00ff00; border: 1px solid #00ff00; padding: 10px; cursor: pointer;">
-    INITIALIZE BOOT
+  <button onclick="detonate()" style="background: #ff0000; color: white; border: none; padding: 15px; cursor: pointer; font-weight: bold;">
+    ACTIVATE TNT
   </button>
 
   <script>
-    function bootSequence() {
-      // 1. Using Variables to store our elements
+    function detonate() {
       const title = document.getElementById('status-text');
       const info = document.getElementById('details');
       
-      // 2. Changing multiple things at once
-      title.innerText = "SYSTEM: LOADING...";
-      title.style.color = "yellow";
+      // 1. Immediate change
+      title.innerText = "FUSE LIT...";
+      title.style.color = "white";
+      document.body.style.backgroundColor = "#500"; 
       
-      // 3. Using a Timer (Advanced)
+      // 2. The "Explosion" after 1.5 seconds
       setTimeout(function() {
-        title.innerText = "SYSTEM: ONLINE";
-        title.style.color = "#00ff00";
-        info.innerText = "Hack successful. Welcome, Maxwell.";
-        document.body.style.boxShadow = "inset 0 0 100px #00ff00";
-      }, 2000); // 2000ms = 2 seconds
+        title.innerText = "BOOM! SYSTEM CRASHED";
+        title.style.color = "#ff0000";
+        info.innerText = "Nostalgia Overload. Please restart Minecraft.";
+        document.body.style.backgroundColor = "#000";
+        // This adds that Red Glow you predicted!
+        document.body.style.boxShadow = "inset 0 0 150px #ff0000";
+      }, 1500); 
     }
   </script>
 
