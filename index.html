@@ -1,11 +1,27 @@
-<h1>Maxwell's Tech Lab</h1>
-<p>Testing out the JavaScript brain...</p>
+<!DOCTYPE html>
+<html>
+<body>
 
-<button onclick="changeColor()">Click for Magic</button>
+  <h1 id="status-text" style="color: red;">System Status: BROKEN</h1>
+  <p>Minecraft Glitch detected...</p>
 
-<script>
-  function changeColor() {
-    // This is the logic: it picks a random color and changes the background
-    const randomColor = Math.floor(Math.random()*16777215).toString(16);
-    document.body.style.backgroundColor = "#" + randomColor;
-  }
+  <button onclick="fixSystem()" style="padding: 10px; cursor: pointer;">
+    Run Repair Script
+  </button>
+
+  <script>
+    function fixSystem() {
+      // 1. Find the broken text
+      const status = document.getElementById('status-text');
+      
+      // 2. Change the text and color
+      status.innerText = "System Status: FIXED";
+      status.style.color = "green";
+      
+      // 3. Pop up a message
+      alert("Repair complete. You can now punch blocks!");
+    }
+  </script>
+
+</body>
+</html>
