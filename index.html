@@ -1,69 +1,42 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Maxwell's MC Dashboard</title>
-    <style>
-        body {
-            background-color: #4e4e4e; /* Stone Color */
-            color: white;
-            font-family: 'Courier New', monospace;
-            text-align: center;
-            padding-top: 50px;
-            transition: 0.8s; 
-            margin: 0;
-            height: 100vh;
-        }
-        .stats-box {
-            background: #333;
-            border: 4px solid #000;
-            display: inline-block;
-            padding: 20px;
-            margin-top: 20px;
-            box-shadow: 5px 5px 0px #222;
-        }
-        button {
-            background: #757575;
-            border: 3px solid #000;
-            color: white;
-            padding: 15px 30px;
-            cursor: pointer;
-            font-family: 'Courier New', monospace;
-            font-weight: bold;
-            margin: 10px;
-            font-size: 18px;
-        }
-        button:hover { background: #8bc34a; color: black; }
-    </style>
-</head>
-<body id="world">
-
-    <h1 id="main-title">MINER: MAXWELL</h1>
-    
-    <div class="stats-box">
-        <p>LEVEL: <span id="level-count">1</span></p>
-        <p>LOCATION: <span id="biome-name">Overworld</span></p>
-    </div>
-
-    <br><br>
-
-    <button onclick="levelUp()">LEVEL UP</button>
-    <button onclick="enterPortal()">ENTER PORTAL</button>
-
-    <script>
-        function levelUp() {
-            const levelElement = document.getElementById('level-count');
-            levelElement.innerText = "99";
-            levelElement.style.color = "#55FF55"; 
-        }
-
-        function enterPortal() {
-            const world = document.getElementById('world');
-            world.style.backgroundColor = "#300"; 
-            world.style.boxShadow = "inset 0 0 200px #ff0000";
-
-            const biome = document.getElementById('biome-name');
-            biome.innerText = "The Nether";
-            biome.style.color = "#ff4d4d";
-            
-            document.getElementById('main-title').innerText = "PORTAL ENTERED";
-        }
+<style>
+    body {
+        background-color:#121212; /*Deep dark background */
+    color: #e0e0e0;               /* Soft white text (easier on the eyes) */
+    front-family: 'segoe UI', Tahoma, genvea, verdana, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+        margin 0;
+    }
+    .container {
+        text-align: center;
+        padding: 40px;
+        border-radius: 20px;
+        background: #1e1e1e;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5)
+        border:1px solid #333
+    }
+    h1 {
+        color #bb86fc; /* A nice "epic" purple accent */
+        letter-spacing: 2px;
+    }
+    button {
+        background transparent; border: 2px solid #bb86fc;
+        color: #bb86fc;
+        padding: 12px 24px;
+        border-radius: 10px;
+        cursor: pointer;
+        front-weight: bold
+        transition: 0.3s:
+    }
+    button:hover{
+            background #bb86fc;
+            color:#121212;
+            }
+            </style>
+            <div class="container">
+                <h1> SYSTEM: MAXWELL </h1>
+                <p> status: chilling </p>
+                <button oneclick+ "alert('System Locked In')" >ACTIVATE</button>
+            </div>
